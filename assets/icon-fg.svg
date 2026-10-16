@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- アダプティブアイコンの前景: 白い T と, 黄色い丸に「文」(翻訳) -->
+  <path d="M310 320 H720 V400 H560 V700 H470 V400 H310 Z" fill="#ffffff" fill-rule="evenodd"/>
+  <circle cx="690" cy="690" r="124" fill="#ffd166"/>
+  <g fill="none" stroke="#235a97" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M690 616 V630"/>
+    <path d="M644 644 H736"/>
+    <path d="M682 648 C 676 684 654 714 626 736"/>
+    <path d="M646 666 C 674 682 704 704 738 738"/>
+  </g>
+</svg>
