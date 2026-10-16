@@ -52,6 +52,11 @@ TypeScript のドキュメント (https://www.typescriptlang.org/docs/) をリ�
 - アイコンはオリジナル (青の T と「文」)。**TypeScript のロゴを使わない。**
 - 画像の CSP は `www.typescriptlang.org` だけ。ほかのホストの画像が出ないときは `tauri.conf.json` の CSP に足す (理由をコメントに書く)。
 
+## 版
+
+- URL に版はない (`/v5.0/docs/...` や `/docs/5.0/...` は 404)。`SiteProfile.versionSource` で、`intro.html` のメニューの Release Notes のリンク (`release-notes/typescript-6-0.html` など) の、一番新しい版 (`highest: true`。今は `6-0`) を読み取って、翻訳のキャッシュを版ごとに分ける (版は選べない)。読み取れなければ、版で分けない。
+- Release Notes の一覧: https://www.typescriptlang.org/docs/handbook/release-notes/overview.html
+
 ## 実機で未確認
 
 画面の見た目、TypeScript のページの取り出しと表示 (コードのブロックの空白、画像、プレーンテキストのコード)、翻訳の品質 (Google, Gemini, ML Kit の結果。特に ML Kit の目印が残るか)、Gemini のモデルの名前と無料枠、ML Kit のモデルの取得、Android の APK の動作 (インストール、リンク、設定、戻るボタン)、Windows と macOS のビルド。

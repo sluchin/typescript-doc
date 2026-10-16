@@ -17,4 +17,12 @@ export const site: SiteProfile = {
   titleSuffix: / - .*$/,
   // 左のメニュー (目次). サーバーが HTML に出す. グループは, リンクのないボタンの項目
   menu: { type: "html", selector: "#sidebar" },
+  // URL に版はない (いつも最新の TypeScript のドキュメント). メニューの Release Notes の一覧
+  // (`release-notes/typescript-6-0.html` など) の, 一番新しい版を, 今の版として読み取って,
+  // 翻訳のキャッシュを, 版ごとに分ける (版は選べない. TypeScript の版が上がったら, 新しく翻訳する)
+  versionSource: {
+    url: "https://www.typescriptlang.org/docs/handbook/intro.html",
+    pattern: /release-notes\/typescript-(\d+-\d+)\.html/,
+    highest: true,
+  },
 };

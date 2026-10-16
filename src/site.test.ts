@@ -8,6 +8,7 @@ import { describe, expect, it } from "vitest";
 import { isDocUrl } from "../shared/ts/lib/docUrl";
 import { extractPage } from "../shared/ts/lib/extract";
 import { collectSegments } from "../shared/ts/lib/segments";
+import { versionFromText } from "../shared/ts/lib/version";
 import { site } from "./site";
 
 /** 作り物の TypeScript のドキュメント風のページ (ドキュメントの文章は使わない). */
@@ -53,5 +54,20 @@ describe("TypeScript site profile", () => {
       ["Two", "https://www.typescriptlang.org/docs/handbook/two.html"],
     ]);
     expect(menu[0].children.map((item) => item.title)).toEqual(["One"]);
+  });
+
+  it("reads the newest version of the release notes to separate the cache", () => {
+    const source = site.versionSource;
+    expect(source?.url).toBe(site.homeUrl);
+    expect(source?.highest).toBe(true);
+    // 作り物の, メニューの Release Notes の一覧 (並び順に, よらない)
+    const menu = [
+      '<a href="/docs/handbook/release-notes/typescript-5-9.html">TypeScript 5.9</a>',
+      '<a href="/docs/handbook/release-notes/typescript-6-0.html">TypeScript 6.0</a>',
+      '<a href="/docs/handbook/release-notes/overview.html">Overview</a>',
+      '<a href="/docs/handbook/release-notes/typescript-5-10.html">TypeScript 5.10</a>',
+    ].join("");
+    expect(versionFromText(menu, source?.pattern as RegExp, source?.highest)).toBe("6-0");
+    expect(versionFromText("<p>none</p>", source?.pattern as RegExp, true)).toBeUndefined();
   });
 });
