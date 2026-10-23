@@ -8,7 +8,7 @@ import type { SiteProfile } from "../shared/ts/lib/profile";
 
 /** TypeScript のドキュメント (www.typescriptlang.org/docs) の設定. 本文は main の中の article. */
 export const site: SiteProfile = {
-  name: "TypeScript Doc",
+  name: "TypeScript Doc Trans",
   host: "www.typescriptlang.org",
   pathPrefix: "/docs/",
   homeUrl: "https://www.typescriptlang.org/docs/handbook/intro.html",

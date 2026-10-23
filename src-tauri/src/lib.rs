@@ -10,7 +10,7 @@ use doc_translator_core::Site;
 const SITE: Site = Site {
     host: "www.typescriptlang.org",
     alt_host: None,
-    user_agent: "typescript-doc/0.1 (+https://github.com/sluchin/typescript-doc)",
+    user_agent: "typescript-doc-trans/0.1 (+https://github.com/sluchin/typescript-doc-trans)",
 };
 
 /// アプリを起動する.

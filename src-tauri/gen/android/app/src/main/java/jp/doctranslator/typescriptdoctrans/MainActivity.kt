@@ -1,4 +1,4 @@
-package jp.sluchin.typescriptdoc
+package jp.doctranslator.typescriptdoctrans
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

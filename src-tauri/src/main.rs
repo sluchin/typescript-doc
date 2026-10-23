@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    typescript_doc_lib::run()
+    typescript_doc_trans_lib::run()
 }
